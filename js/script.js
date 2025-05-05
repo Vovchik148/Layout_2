@@ -1,24 +1,29 @@
-$(document).ready(function() {
-    $('.header-burger').click(function(event) {
-        const $navBurger = $('.nav_burger');
-        const $headerBurger = $('.header-burger');
-        const isActive = $navBurger.hasClass('active');
+document.addEventListener('DOMContentLoaded', () => {
+    const headerBurger = document.querySelector('.header-burger');
+    const navBurger = document.querySelector('.nav_burger');
 
-        // Видаляємо попередні обробники animationend, щоб уникнути накладання
-        $navBurger.off('animationend');
+    headerBurger.addEventListener('click', () => {
+        const isActive = navBurger.classList.contains('active');
 
-        if (isActive) {
-            // Анімація закриття
-            $navBurger.css('animation', 'burger_anim_close 0.4s forwards');
+        // Видаляємо попередній обробник, щоб уникнути накладання
+        navBurger.removeEventListener('animationend', handleAnimationEnd);
+
+        if (!isActive) navBurger.classList.add('active'); // ← Анімація відкриття (запускається через CSS клас)
             
-            $navBurger.on('animationend', function() {
-                $navBurger.removeClass('active').css('animation', '');
-            });
-        } else {
-            // Анімація відкриття
-            $navBurger.addClass('active');
+        else {   
+            // Анімація закриття
+            navBurger.style.animation = 'burger_anim_close 0.3s forwards';
+            
+            // Обробник завершення анімації
+            navBurger.addEventListener('animationend', handleAnimationEnd);
         }
 
-        $headerBurger.toggleClass('active');
+        headerBurger.classList.toggle('active');
     });
+
+    function handleAnimationEnd() {
+        navBurger.classList.remove('active');
+        navBurger.style.animation = '';
+    }
 });
+
