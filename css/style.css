@@ -370,6 +370,13 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 850px) {
     .features-content {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
+        
+    }
+}
+
+@media (max-width: 530px) {
+    .features-content {
+        margin: 0 5rem;
     }
 }
 
