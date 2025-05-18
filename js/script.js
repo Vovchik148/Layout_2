@@ -27,3 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function(){
+    var swiper = new Swiper('.swiper', {
+        loop: true,
+        grabCursor: true,
+        slidesPerView: 1,
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+            pageUpDown: true,
+        },
+
+        
+    });
+});

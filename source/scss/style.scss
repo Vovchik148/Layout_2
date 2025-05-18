@@ -98,14 +98,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     100% { 
-        height: 15%; 
+        height: 35%; 
         opacity: 1; 
     }
 }
 
 @keyframes burger_anim_close {
     0% { 
-        height: 15%; 
+        height: 35%; 
         opacity: 1; 
     }
 
@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
         overflow: auto;
         width: 100%;
-        
+        margin-top: 1rem;
         background-color: #3e3f45;
     }
 
@@ -273,11 +273,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 6rem;
 }
 
-.buttons button {
+%button {
     background-color: transparent;
     border: 2px solid #3e3f45;
     margin: 0 0.5rem 0 0;
-    height: auto;
+    height: auto; 
+}
+
+%button_hover {
+    background-color: #008ed6;
+    border: 2px solid #008ed6;
+    transition: all 0.4s ease;
+}
+
+.buttons button {
+    @extend %button;
 }
 
 .buttons button a {
@@ -292,9 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .buttons button:hover {
-    background-color: #008ed6;
-    border: 2px solid #008ed6;
-    transition: all 0.4s ease;
+    @extend %button_hover;
 }
 
 .buttons button:active {
@@ -465,7 +473,7 @@ h1, h2, h3, h4, h5, h6 {
 .details-text {
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: center;
     width: 25%;
     margin-left: 5rem;
@@ -475,14 +483,11 @@ h1, h2, h3, h4, h5, h6 {
         margin: 1rem 0 -1rem;
         font-size: 14px;
     }
-
     >img {
         margin: 1rem 0 1rem;
     }
-
     .details-content {
         color: gray;
-
     }
 }
 
@@ -541,3 +546,165 @@ h1, h2, h3, h4, h5, h6 {
     }    
 }
 
+.slider {
+    background: url(/img/background_slick.png);
+    background-size: cover;
+    height: fit-content;
+    padding: 2rem 0 0;
+    margin: 0 auto;
+}
+
+.slider-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.A {
+    @extend %title;
+    margin: 0 0 .5rem 0;
+    font-size: 12px;    
+}
+
+.B {
+    color: #fff;
+    font-size: 32px;
+    margin: 0 0 .5rem 0;
+}
+
+.C {
+    margin: .5rem 0 4rem 0;
+}
+
+.swiper {
+    width: 85%;
+    height: max-content;
+}
+
+.swiper-slide {
+    display: flex !important;
+}
+
+.content2 {
+    padding-left: .5rem;
+}
+
+.content1, .content2 {
+    width: 50%;
+}
+
+.img-content {
+    margin-top: 1rem;
+}
+
+.author-lego {
+    margin-right: .5rem;
+}
+
+.author-lego, .author {
+    color: #fff;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.img-content {
+    display: flex;
+    align-items: center;
+}
+
+.img-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    color: #fff;
+}
+
+.A1 {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.A2 {
+    font-size: 14px;
+}
+
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative !important;
+    bottom: unset !important;
+    padding: 1.5rem 0 2rem;
+}
+
+.swiper-pagination-bullet {
+    opacity: unset !important;
+    border: .5px solid #b4b4b4;
+    transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+    width: 15px !important;
+    height: 15px !important;
+    background-color: #fff !important;
+}
+
+.slider-after {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #000;
+    height: 100px;
+    & .text-after {
+        color: #fff;
+        font-size: 28px;
+        >span {
+            font-family: serif;
+        }
+        & .text {
+            font-weight: 900;
+        }
+    }
+}
+
+.after-buttons button {
+    @extend %button;
+    height: 45px;
+    & a {
+        text-decoration: none;
+        color: #fff;
+        padding: 1rem;
+    }
+    &:hover {
+        @extend %button_hover;
+    }
+}
+
+@media (max-width: 450px) {
+    .slider-after {
+        height: 170px;
+        .text-after {
+            font-size: 20px;
+        }
+    }
+
+    .after-buttons {
+        button {
+            a {
+                padding: 0;
+            }    
+        }
+    }
+}
+
+@media (max-width: 415px) {
+    .after-buttons {
+        button {
+            
+            a {
+                font-size: 12px;
+            }
+        }
+    }
+}
