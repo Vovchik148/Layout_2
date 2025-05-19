@@ -1,5 +1,6 @@
 @charset "UTF-8";
-html, body {
+html,
+body {
   height: 100% !important;
   width: 100% !important;
   margin: 0;
@@ -13,7 +14,12 @@ html, body {
   padding-top: 2.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 900 !important;
 }
 
@@ -189,7 +195,8 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
   }
-  .header-burger:before, .header-burger:after {
+  .header-burger:before,
+  .header-burger:after {
     content: '';
     background-color: #fff;
     position: absolute;
@@ -300,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 1rem;
 }
 
-.content-text .title, .details-text .title, .A {
+.content-text .title, .details-text .title, .A, .plans-title .AA {
   color: #008ed6;
   margin: 0 0 2rem -0.1rem;
   font-size: 18px;
@@ -318,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 6rem;
 }
 
-.buttons button, .after-buttons button {
+.buttons button, .after-buttons button, .card-body .order_now {
   background-color: transparent;
   border: 2px solid #3e3f45;
   margin: 0 0.5rem 0 0;
@@ -362,7 +369,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 0 0 0 2rem;
   }
-  .content-text .title, .content-text .title-text {
+  .content-text .title,
+  .content-text .title-text {
     margin-bottom: 0.5rem;
   }
   .content-text .text {
@@ -589,7 +597,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 980px) {
-  .details, .details1 {
+  .details,
+  .details1 {
     margin-left: 0;
   }
   .details > img {
@@ -675,7 +684,8 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: .5rem;
 }
 
-.content1, .content2 {
+.content1,
+.content2 {
   width: 50%;
 }
 
@@ -687,7 +697,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: .5rem;
 }
 
-.author-lego, .author {
+.author-lego,
+.author {
   color: #fff;
   font-size: 18px;
   font-style: italic;
@@ -803,4 +814,362 @@ h1, h2, h3, h4, h5, h6 {
   .after-buttons button a {
     font-size: 12px;
   }
+}
+
+.plans-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+
+.plans-title .AA {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.plans-title .BB {
+  font-size: 32px;
+  margin-bottom: .5rem;
+}
+
+.plans-title .CC {
+  margin-bottom: 3rem;
+}
+
+.plans-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(300px, 1fr) 40px minmax(300px, 1fr) 40px minmax(300px, 1fr) 40px minmax(300px, 1fr);
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  grid-gap: 40px;
+  margin: 0 15rem;
+}
+
+@media (max-width: 1750px) {
+  .plans-content {
+    margin: 0 5rem;
+  }
+}
+
+@media (max-width: 1420px) {
+  .plans-content {
+    margin: 0 2rem;
+    grid-gap: 40px 10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .plans-content {
+    -ms-grid-columns: minmax(300px, 1fr) 10px minmax(300px, 1fr);
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .plans-content {
+    -ms-grid-columns: minmax(200px, 1fr);
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+}
+
+.card {
+  margin-bottom: 4rem;
+}
+
+.card-body {
+  text-align: center;
+  padding: 0 !important;
+}
+
+.card-body .card-title {
+  padding-top: 1rem;
+  font-size: 26px;
+  font-weight: 500;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card-body hr {
+  margin: 0;
+}
+
+.card-body .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 150px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card-body .price > h1 {
+  font-weight: normal !important;
+  font-size: 60px;
+  margin: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card-body .price > h1 .currency {
+  font-size: 31px;
+}
+
+.card-body .price > p {
+  opacity: 0.4;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.card-body .trial {
+  margin: 0 0 3rem 0;
+}
+
+.card-body > p {
+  padding: 0 3rem 3rem 3rem;
+}
+
+.card-body > p > span {
+  color: #008ed6;
+}
+
+.card-body:hover .card-title {
+  color: #008ed6;
+}
+
+.card-body:hover .price {
+  background-color: #008ed6;
+}
+
+.card-body:hover .price h1 {
+  color: #fff;
+}
+
+.card-body:hover .price > p {
+  color: #fff;
+  opacity: 1;
+}
+
+.card-body .order_now {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px solid #b4b4b4;
+  margin-bottom: 2rem;
+  height: 50px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.card-body .order_now:hover {
+  background-color: #008ed6;
+  border: 1px solid #008ed6;
+}
+
+.card-body .order_now:hover > a {
+  color: #fff;
+}
+
+.card-body .order_now > a {
+  text-decoration: none;
+  color: #008ed6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (max-width: 350px) {
+  .card-body > p {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+.touch .touch-content .phone > img, .touch .touch-content .location > img {
+  margin-bottom: 1.5rem;
+}
+
+.touch {
+  padding: 2rem 0 3rem 0;
+  background-color: #f5f7f9;
+  margin-bottom: 3rem;
+}
+
+.touch .touch-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 2.2rem;
+}
+
+.touch .touch-title .title1 {
+  color: #008ed6;
+  font-size: 14px;
+}
+
+.touch .touch-title .modal-button {
+  background-color: transparent;
+  border: 0;
+  font-size: 32px;
+}
+
+.touch .touch-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(140px, 1fr) 0 minmax(140px, 1fr) 0 minmax(140px, 1fr);
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  grid-gap: 30px 0;
+}
+
+.touch .touch-content .phone {
+  text-align: center;
+  line-height: 10px;
+}
+
+.touch .touch-content .phone > p {
+  opacity: 0.3;
+}
+
+.touch .touch-content .location {
+  text-align: center;
+  line-height: 10px;
+}
+
+.touch .touch-content .location > p {
+  opacity: 0.3;
+}
+
+.touch .touch-content .email {
+  text-align: center;
+  line-height: 10px;
+}
+
+.touch .touch-content .email > img {
+  margin-bottom: 2rem;
+}
+
+.touch .touch-content .email > p {
+  opacity: 0.3;
+}
+
+@media (max-width: 530px) {
+  .touch-content {
+    -ms-grid-columns: none !important;
+    grid-template-columns: none !important;
+  }
+}
+
+.modal {
+  display: none;
+  background-color: transparent;
+  position: fixed;
+}
+
+.modal .modal-content {
+  display: block;
+  background-color: #000;
+  max-width: 50%;
+  top: 4rem;
+  left: 28rem;
+  text-align: inherit;
+}
+
+.modal .modal-content .close {
+  cursor: pointer;
+  font-size: 50px;
+  color: #fff;
+  position: relative;
+  top: 0;
+  left: 55rem;
+}
+
+.modal .modal-content form {
+  text-align: right;
+}
+
+.modal .modal-content form .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal .modal-content form .form .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 41%;
+  margin-right: 2rem;
+}
+
+.modal .modal-content form .form .info input {
+  padding: 1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  background-color: transparent;
+  border: 1px solid #696767;
+}
+
+.modal .modal-content form .form .info input:focus {
+  outline: none;
+}
+
+.modal .modal-content form .form .info .subject {
+  margin: 0;
+}
+
+.modal .modal-content form .form textarea {
+  padding: 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #696767;
+  width: 48%;
+}
+
+.modal .modal-content form .form textarea:focus {
+  outline: none;
+}
+
+.modal .modal-content form button {
+  background-color: transparent;
+  color: #e4e0e0;
+  border: 1px solid #696767;
+  border-radius: 2px;
+  padding: 1rem 4rem;
+  margin: 0 3.9rem 4rem 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.modal .modal-content form button:hover {
+  background-color: #008ed6;
+  border: 1px solid #008ed6;
+  color: #fff;
 }

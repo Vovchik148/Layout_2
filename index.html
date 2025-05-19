@@ -391,7 +391,177 @@
                 <button><a href="#">DOWNLOAD NOW</a></button>
             </div>
         </div>
-    </main>
+        <div class="plans">
+            <div class="plans-title">
+                <span class="AA">QUALITY HAS ITS OWN PRICE</span>
+                <span class="BB">Pricings & Plans</span>
+                <div class="CC">
+                    <img src="/img/blue_line.png" alt="">
+                </div>
+            </div>
+            <div class="plans-content">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            FREE
+                        </div>
+                        <hr>
+                        <div class="price">
+                            <h1><sup class="currency">$</sup>0</h1>
+                            <p>/per month</p>
+                        </div>
+                        <hr class="trial">
+                        <p class="card-text">Some quick example text to build on the <span>card title</span> and make up
+                            the bulk of
+                            the
+                            card’s content.</p>
+                        <button class="order_now">
+                            <a href="#">ORDER NOW</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            PERSONAL
+                        </div>
+                        <hr>
+                        <div class="price">
+                            <h1><sup class="currency">$</sup>25</h1>
+                            <p>/per month</p>
+                        </div>
+                        <hr class="trial">
+                        <p class="card-text">Some quick example text to build on the <span>card title</span> and make up
+                            the bulk of
+                            the
+                            card’s content.</p>
+                        <button class="order_now">
+                            <a href="#">ORDER NOW</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            BUSINESS
+                        </div>
+                        <hr>
+                        <div class="price">
+                            <h1><sup class="currency">$</sup>50</h1>
+                            <p>/per month</p>
+                        </div>
+                        <hr class="trial">
+                        <p class="card-text">Some quick example text to build on the <span>card title</span> and make up
+                            the bulk of
+                            the
+                            card’s content.</p>
+                        <button class="order_now">
+                            <a href="#">ORDER NOW</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            ULTIMATE
+                        </div>
+                        <hr>
+                        <div class="price">
+                            <h1><sup class="currency">$</sup>99</h1>
+                            <p>/per month</p>
+                        </div>
+                        <hr class="trial">
+                        <p class="card-text">Some quick example text to build on the <span>card title</span> and make up
+                            the bulk of
+                            the
+                            card’s content.</p>
+                        <button class="order_now">
+                            <a href="#">ORDER NOW</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="touch">
+            <div class="touch-title">
+                <span class="title1">STAY IN TOUCH</span>
+                <button class="modal-button" id="feedbackButton">Contact us</button>
+                <div class="C">
+                    <img src="/img/blue_line.png" alt="">
+                </div>
+            </div>
+            <div class="touch-content">
+                <div class="phone">
+                    <img src="/img/icon_iphone.png" alt="">
+                    <p>Phone: (415) 124-5678</p>
+                    <p>Fax: (412) 123-8290</p>
+                </div>
+                <div class="location">
+                    <img src="/img/icon_map.png" alt="">
+                    <p>1001 Brickell Bar Dr.</p>
+                    <p>Suite 1900</p>
+                    <p>Miami, FL 33131</p>
+                </div>
+                <div class="email">
+                    <img src="/img/icon_messange.png" alt="">
+                    <p>support@yourname.com</p>
+                </div>
+            </div>
+        </div>
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="feedbackForm">
+                    <div class="form">
+                        <div class="info">
+                            <input type="text" id="name" name="name" autocomplete="off" placeholder="NAME*" required>
 
+                            <input type="email" id="email" name="email" autocomplete="off" placeholder="EMAIL*"
+                                required>
+
+                            <input id="subject" name="subject" class="subject" autocomplete="off" placeholder="SUBJECT*" required>
+                        </div>
+                        <textarea id="message" name="message" placeholder="MESSAGE*" required></textarea>
+                    </div>
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            // Отримуємо елементи
+            const modal = document.getElementById("feedbackModal");
+            const btn = document.getElementById("feedbackButton");
+            const close = document.getElementsByClassName("close")[0];
+            const form = document.getElementById("feedbackForm");
+
+            // Відкриваємо модальне вікно при кліку на кнопку
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // Закриваємо модальне вікно при кліку на "х"
+            close.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Закриваємо модальне вікно при кліку поза ним
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Обробка відправки форми
+            form.onsubmit = function (event) {
+                event.preventDefault();
+
+                // Тут можна додати код для відправки даних на сервер
+                alert("Thank you for your feedback!");
+                modal.style.display = "none";
+                form.reset();
+            }
+        </script>
+
+    </main>
 
 </body>
