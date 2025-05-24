@@ -512,56 +512,61 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <form id="feedbackForm">
-                    <div class="form">
-                        <div class="info">
-                            <input type="text" id="name" name="name" autocomplete="off" placeholder="NAME*" required>
-
-                            <input type="email" id="email" name="email" autocomplete="off" placeholder="EMAIL*"
-                                required>
-
-                            <input id="subject" name="subject" class="subject" autocomplete="off" placeholder="SUBJECT*" required>
+                    <div class="feedbackDiv">
+                        <div class="form-group">
+                            <div class="input-field">
+                                <input type="text" id="name" name="name" placeholder="NAME *" autocomplete="off"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" id="email" name="email" placeholder="EMAIL *" autocomplete="off"
+                                    required>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="subject" name="subject" placeholder="SUBJECT *"
+                                    autocomplete="off" required>
+                                <span class="error-message"></span>
+                            </div>
                         </div>
-                        <textarea id="message" name="message" placeholder="MESSAGE*" required></textarea>
+                        <div class="form-group_1">
+                            <textarea id="message" name="message" placeholder="MESSAGE *" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
                     </div>
                     <button type="submit">SEND MESSAGE</button>
                 </form>
             </div>
         </div>
-        <script>
-            // Отримуємо елементи
-            const modal = document.getElementById("feedbackModal");
-            const btn = document.getElementById("feedbackButton");
-            const close = document.getElementsByClassName("close")[0];
-            const form = document.getElementById("feedbackForm");
-
-            // Відкриваємо модальне вікно при кліку на кнопку
-            btn.onclick = function () {
-                modal.style.display = "block";
-            }
-
-            // Закриваємо модальне вікно при кліку на "х"
-            close.onclick = function () {
-                modal.style.display = "none";
-            }
-
-            // Закриваємо модальне вікно при кліку поза ним
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-
-            // Обробка відправки форми
-            form.onsubmit = function (event) {
-                event.preventDefault();
-
-                // Тут можна додати код для відправки даних на сервер
-                alert("Thank you for your feedback!");
-                modal.style.display = "none";
-                form.reset();
-            }
-        </script>
-
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d631.1506225698108!2d25.3205824!3d50.7458612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472599e96a961109%3A0xdd8a66cee3288f48!2zMTdBLCDQstGD0LvQuNGG0Y8g0JrRgNC40LLQuNC5INCS0LDQuywgMTfQkCwg0JvRg9GG0YzQuiwg0JLQvtC70LjQvdGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA0MzAwMA!5e0!3m2!1suk!2sua!4v1748081398709!5m2!1suk!2sua"
+                width="100%" height="456" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </main>
+    <footer>
+        <div class="links">
+            <a href="https://www.behance.net/" target="_blank">
+                <img src="/img/behance.svg" alt="">
+            </a>
+            <a href="https://dribbble.com/" target="_blank">
+                <img src="/img/basketball.svg" alt="">
+            </a>
+            <a href="https://x.com/">
+                <img src="/img/twitter.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/">
+                <img src="/img/facebook.svg" alt="">
+            </a>
+            <a href="https://ua.linkedin.com/">
+                <img src="/img/linkedin.svg" alt="">
+            </a>
+        </div>
+        <div class="footer-text">
+            COPYRIGHT &#9426 2014 LUCID ONEPAGE THEME
+        </div>
+    </footer>
 
 </body>

@@ -1004,7 +1004,7 @@ h6 {
 .touch {
   padding: 2rem 0 3rem 0;
   background-color: #f5f7f9;
-  margin-bottom: 3rem;
+  padding-bottom: 7rem;
 }
 
 .touch .touch-title {
@@ -1083,41 +1083,46 @@ h6 {
 
 .modal {
   display: none;
-  background-color: transparent;
   position: fixed;
-}
-
-.modal .modal-content {
-  display: block;
-  background-color: #000;
-  max-width: 50%;
-  top: 4rem;
-  left: 28rem;
-  text-align: inherit;
-}
-
-.modal .modal-content .close {
-  cursor: pointer;
-  font-size: 50px;
-  color: #fff;
-  position: relative;
   top: 0;
-  left: 55rem;
-}
-
-.modal .modal-content form {
-  text-align: right;
-}
-
-.modal .modal-content form .form {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 4rem;
-  margin-bottom: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.modal .modal-content form .form .info {
+.modal .modal-content {
+  background-color: #000;
+  padding: 70px;
+  border-radius: 0;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.modal .modal-content .close {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .modal-content form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1125,51 +1130,286 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 41%;
-  margin-right: 2rem;
 }
 
-.modal .modal-content form .form .info input {
-  padding: 1rem;
-  color: #fff;
+.modal .modal-content form .feedbackDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 15px;
   margin-bottom: 1.5rem;
-  background-color: transparent;
-  border: 1px solid #696767;
 }
 
-.modal .modal-content form .form .info input:focus {
-  outline: none;
+.modal .modal-content form .feedbackDiv .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 50%;
 }
 
-.modal .modal-content form .form .info .subject {
-  margin: 0;
+.modal .modal-content form .feedbackDiv .form-group input {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #3e3f45;
 }
 
-.modal .modal-content form .form textarea {
-  padding: 1rem;
-  background-color: transparent;
+.modal .modal-content form .feedbackDiv .form-group input::-webkit-input-placeholder {
   color: #fff;
-  border: 1px solid #696767;
-  width: 48%;
+  opacity: 0.3;
 }
 
-.modal .modal-content form .form textarea:focus {
+.modal .modal-content form .feedbackDiv .form-group input::-moz-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group input:-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group input::-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group input::placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group input:focus {
   outline: none;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea {
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border-color: #3e3f45;
+  color: white;
+  font-size: 16px;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea::-moz-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea:-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea::-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea::placeholder {
+  color: #fff;
+  opacity: 0.3;
+}
+
+.modal .modal-content form .feedbackDiv .form-group_1 textarea:focus {
+  outline: none;
+}
+
+.modal .modal-content form .feedbackDiv .input-field,
+.modal .modal-content form .feedbackDiv .form-group_1 {
+  position: relative;
+}
+
+.modal .modal-content form .feedbackDiv .input-field .error-message,
+.modal .modal-content form .feedbackDiv .form-group_1 .error-message {
+  display: none;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.modal .modal-content form .feedbackDiv .input-field input:invalid,
+.modal .modal-content form .feedbackDiv .input-field textarea:invalid,
+.modal .modal-content form .feedbackDiv .form-group_1 input:invalid,
+.modal .modal-content form .feedbackDiv .form-group_1 textarea:invalid {
+  border-bottom-color: #ff0000;
+}
+
+.modal .modal-content form .feedbackDiv .input-field input:invalid + .error-message,
+.modal .modal-content form .feedbackDiv .input-field textarea:invalid + .error-message,
+.modal .modal-content form .feedbackDiv .form-group_1 input:invalid + .error-message,
+.modal .modal-content form .feedbackDiv .form-group_1 textarea:invalid + .error-message {
+  display: block;
+}
+
+.modal .modal-content form .feedbackDiv .input-field textarea,
+.modal .modal-content form .feedbackDiv .form-group_1 textarea {
+  height: 100%;
 }
 
 .modal .modal-content form button {
-  background-color: transparent;
-  color: #e4e0e0;
-  border: 1px solid #696767;
-  border-radius: 2px;
-  padding: 1rem 4rem;
-  margin: 0 3.9rem 4rem 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: calc(100% / 3.5);
+  padding: 12px;
+  background: transparent;
+  color: white;
+  border: 1px solid #555;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .modal .modal-content form button:hover {
   background-color: #008ed6;
-  border: 1px solid #008ed6;
-  color: #fff;
+  border-color: #008ed6;
+}
+
+@media (max-width: 470px) {
+  .modal .modal-content {
+    padding: 30px;
+  }
+  .modal .modal-content .close {
+    font-size: 30px;
+    right: 7px;
+  }
+}
+
+@media (max-width: 390px) {
+  .modal .modal-content form .feedbackDiv .form-group .input-field input {
+    padding: 10px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group .input-field input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group .input-field input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group .input-field input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group .input-field input::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group .input-field input::placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea {
+    padding: 10px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea::-moz-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form .feedbackDiv .form-group_1 textarea::placeholder {
+    font-size: 14px;
+  }
+  .modal .modal-content form button {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+.map-container {
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  display: block;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  background-color: #16151B;
+}
+
+footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+footer .links a {
+  padding: 0 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+footer .links a img {
+  width: 25px;
+}
+
+footer .footer-text {
+  color: #615F65;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+@media (max-width: 420px) {
+  footer .links a {
+    padding: 0 .6rem;
+  }
+  footer .footer-text {
+    font-size: 12px;
+  }
 }
