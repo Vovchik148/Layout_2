@@ -49,78 +49,45 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById("feedbackModal");
-    const btn = document.getElementById("feedbackButton");
-    const close = document.querySelector(".close");
-    const form = document.getElementById("feedbackForm");
+    const form = document.getElementById('feedbackForm');
+    const modal = document.getElementById('feedbackModal');
+    const successMsg = document.getElementById('feedbackSuccess');
+    const closeBtn = document.getElementById('closeSuccessMsg');
 
-    // Відкриття модального вікна
-    if (btn) {
-        btn.addEventListener('click', function () {
-            if (modal) modal.style.display = "flex";
-        });
-    }
-
-    // Закриття модального вікна
-    if (close) {
-        close.addEventListener('click', function () {
-            if (modal) modal.style.display = "none";
-        });
-    }
-
-    // Закриття при кліку на фон
-    if (modal) {
-        window.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
-
-    // Валідація форми
+    // Відправка форми
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Очищення помилок
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(msg => msg.textContent = '');
+            // Валідація
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-            let isValid = true;
-
-            // Перевірка поля Name
-            const name = document.getElementById("name");
-            if (!name || !name.value.trim()) {
-                if (name) name.nextElementSibling.textContent = "Будь ласка, введіть ім'я";
-                isValid = false;
+            if (!name || !email || !subject || !message) {
+                alert("Будь ласка, заповніть всі обов'язкові поля!");
+                return;
             }
 
-            // Перевірка поля Email (тепер тільки на наявність @)
-            const email = document.getElementById("email");
-            if (!email || !email.value.includes('@')) {
-                if (email) email.nextElementSibling.textContent = "Будь ласка, введіть коректний email (має містити @)";
-                isValid = false;
+            // Показуємо повідомлення
+            successMsg.style.display = 'block';
+
+            // Ховаємо форму
+            if (modal) {
+                modal.style.display = 'none';
             }
 
-            // Перевірка поля Subject
-            const subject = document.getElementById("subject");
-            if (!subject || !subject.value.trim()) {
-                if (subject) subject.nextElementSibling.textContent = "Будь ласка, введіть тему";
-                isValid = false;
-            }
+            // Очищаємо поля
+            form.reset();
+        });
+    }
 
-            // Перевірка поля Message
-            const message = document.getElementById("message");
-            if (!message || !message.value.trim()) {
-                if (message) message.nextElementSibling.textContent = "Будь ласка, введіть повідомлення";
-                isValid = false;
-            }
-
-            if (isValid) {
-                alert("Дякуємо за ваш відгук!");
-                if (modal) modal.style.display = 'none';
-                form.reset();
-            }
+    // Закриття повідомлення (без перезавантаження)
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            successMsg.style.display = 'none';
+            // Форма залишається прихованою до ручного перезавантаження!
         });
     }
 });

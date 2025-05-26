@@ -485,7 +485,7 @@
         <div class="touch">
             <div class="touch-title">
                 <span class="title1">STAY IN TOUCH</span>
-                <button class="modal-button" id="feedbackButton">Contact us</button>
+                <span>Contact us</span>
                 <div class="C">
                     <img src="/img/blue_line.png" alt="">
                 </div>
@@ -493,7 +493,8 @@
             <div class="touch-content">
                 <div class="phone">
                     <img src="/img/icon_iphone.png" alt="">
-                    <p>Phone: (415) 124-5678</p>
+                    <br>
+                    <button id="phoneButton">Phone: (415) 124-5678</button>
                     <p>Fax: (412) 123-8290</p>
                 </div>
                 <div class="location">
@@ -504,40 +505,47 @@
                 </div>
                 <div class="email">
                     <img src="/img/icon_messange.png" alt="">
-                    <p>support@yourname.com</p>
+                    <br>
+                    <button id="emailBtn">support@yourname.com</button>
+                </div>
+            </div>
+            <div id="feedbackModal" class="no_modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="feedbackForm">
+                        <div class="feedbackDiv">
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <input type="text" id="name" name="name" placeholder="NAME *" autocomplete="off"
+                                        required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" id="email" name="email" placeholder="EMAIL *" autocomplete="off"
+                                        required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="subject" name="subject" placeholder="SUBJECT *"
+                                        autocomplete="off" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-group_1">
+                                <textarea id="message" name="message" placeholder="MESSAGE *" required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+                        <button type="submit">SEND MESSAGE</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <div id="feedbackModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form id="feedbackForm">
-                    <div class="feedbackDiv">
-                        <div class="form-group">
-                            <div class="input-field">
-                                <input type="text" id="name" name="name" placeholder="NAME *" autocomplete="off"
-                                    required>
-                                <span class="error-message"></span>
-                            </div>
-                            <div class="input-field">
-                                <input type="email" id="email" name="email" placeholder="EMAIL *" autocomplete="off"
-                                    required>
-                                <span class="error-message"></span>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" id="subject" name="subject" placeholder="SUBJECT *"
-                                    autocomplete="off" required>
-                                <span class="error-message"></span>
-                            </div>
-                        </div>
-                        <div class="form-group_1">
-                            <textarea id="message" name="message" placeholder="MESSAGE *" required></textarea>
-                            <span class="error-message"></span>
-                        </div>
-                    </div>
-                    <button type="submit">SEND MESSAGE</button>
-                </form>
-            </div>
+        
+        <div id="feedbackSuccess" class="feedback-success">
+            <h3>Дякуємо за ваш відгук!</h3>
+            <p>Ваше повідомлення успішно відправлено.</p>
+            <button id="closeSuccessMsg">OK</button>
         </div>
         <div class="map-container">
             <iframe
@@ -545,6 +553,19 @@
                 width="100%" height="456" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <script>
+            document.getElementById('emailBtn').addEventListener('click', function () {
+                const email = this.textContent.trim(); // trim() для видалення зайвих пробілів
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+                window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+            });
+        </script>
+        <script>
+            document.getElementById('phoneButton').addEventListener('click', function () {
+                const phoneNumber = this.textContent.trim().replace(/[^\d+]/g, ''); // Видаляємо всі нецифрові символи, крім +
+                window.open(`tel:${phoneNumber}`, '_blank'); // На телефонах відкриє дзвінок
+            });
+        </script>
     </main>
     <footer>
         <div class="links">
