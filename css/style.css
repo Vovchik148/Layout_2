@@ -1076,6 +1076,7 @@ h6 {
 .touch .touch-content .email {
   text-align: center;
   line-height: 10px;
+  margin-bottom: 2rem;
 }
 
 .touch .touch-content .email > img {
